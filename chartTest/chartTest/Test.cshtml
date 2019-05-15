@@ -1,0 +1,94 @@
+﻿@using chartTest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @{
+
+            AspChartHelper aspChartHelper = new AspChartHelper();
+            aspChartHelper.ChartTitle = "Food";
+            aspChartHelper.aspChartType = AspChartHelper.AspChartType.Line;
+            aspChartHelper.xAndyValues = new List<AspChartSeries>();
+            aspChartHelper.AddLegend = true;
+
+            AspChartSeries serie1 = new AspChartSeries();
+            serie1.SeriesTitle = "Shona";
+            serie1.SeriesValue = new List<KeyValuePair>();
+            serie1.SeriesValue.Add(new KeyValuePair() { Key = "23 January 2019", Value = 23  });
+            serie1.SeriesValue.Add(new KeyValuePair() { Key = "24 January 2019", Value = 43  });
+            serie1.SeriesValue.Add(new KeyValuePair() { Key = "25 January 2019", Value = 63  });
+            serie1.SeriesValue.Add(new KeyValuePair() { Key = "26 January 2019", Value = 73  });
+            aspChartHelper.xAndyValues.Add(serie1);
+
+            AspChartSeries serie2 = new AspChartSeries();
+            serie2.SeriesTitle = "English";
+            serie2.SeriesValue = new List<KeyValuePair>();
+            serie2.SeriesValue.Add(new KeyValuePair() { Key = "23 January 2019", Value = 33 });
+            serie2.SeriesValue.Add(new KeyValuePair() { Key = "24 January 2019", Value = 59 });
+            serie2.SeriesValue.Add(new KeyValuePair() { Key = "25 January 2019", Value = 90 });
+            serie2.SeriesValue.Add(new KeyValuePair() { Key = "26 January 2019", Value = 84 });
+            aspChartHelper.xAndyValues.Add(serie2);
+
+            aspChartHelper.GetChart().Write();
+
+            //var myChart = new Chart(width: 600, height: 400)
+            //    .AddTitle("Resource Utilization in Projects in Week 1")
+            //    //.AddSeries(
+            //    //    name: "Term 1",
+            //    //    chartType: "Column",
+            //    //    xValue: new[] { "W1", "W2", "W3", "W4", "W5" },
+            //    //    yValues: new[] { 80, 60, 40, 20, 10 }
+            //    //)
+            //    //.AddSeries(
+            //    //    name: "Term 2",
+            //    //    chartType: "Column",
+            //    //    xValue: new[] { "W1", "W2", "W3", "W4", "W5" , "w10"},
+            //    //    yValues: new[] { 10, 10, 0, 10, 10 , 90}
+            //    //)
+            //    //.AddSeries(
+            //    //    name: "Term 3",
+            //    //    chartType: "Column",
+            //    //    xValue: new[] { "W1", "W2", "W3", "W4", "W5" },
+            //    //    yValues: new[] { "10", "30", "50", "70", "80" }
+            //    //)
+            //    //.AddLegend() 
+            //    .AddSeries(
+            //        name: "Shona",
+            //        chartType: "Spline",
+            //         xValue: new[] { new DateTime(2019,2,2).ToLongDateString(), new DateTime(2019, 2, 2).ToLongDateString(), new DateTime(2019 ,2, 5).ToLongDateString(), new DateTime(2019, 2, 10).ToLongDateString(), new DateTime(2019, 2, 12).ToLongDateString(), new DateTime(2019, 2, 20).ToLongDateString() },
+            //        yValues: new[] { 10, 10, 0, 10, 10 , 7}
+            //    )
+            //    .AddSeries(
+            //        name: "English",
+            //        chartType: "Spline",
+            //        xValue: new[] { new DateTime(2019, 2, 2).ToLongDateString(), new DateTime(2019, 2, 2).ToLongDateString(), new DateTime(2019, 2, 5).ToLongDateString(), new DateTime(2019, 2, 10).ToLongDateString(), new DateTime(2019, 2, 12).ToLongDateString(), new DateTime(2019, 2, 20).ToLongDateString() },
+            //        yValues: new[] { "30", "30", "50", "70", "80" , "65" }
+            //    )
+            //    .AddSeries(
+            //        name: "Accounts",
+            //        chartType: "Spline",
+            //        xValue: new[] { new DateTime(2019, 2, 2).ToLongDateString(), new DateTime(2019, 2, 2).ToLongDateString(), new DateTime(2019, 2, 5).ToLongDateString(), new DateTime(2019, 2, 10).ToLongDateString(), new DateTime(2019, 2, 12).ToLongDateString(), new DateTime(2019, 2, 20).ToLongDateString() },
+            //        yValues: new[] { "94", "84", "37", "48", "93" , "34"}
+            //    )
+            //    .AddSeries(
+            //        name: "Maths",
+            //        chartType: "Spline",
+            //        xValue: new[] { new DateTime(2019, 2, 2).ToLongDateString(), new DateTime(2019, 2, 2).ToLongDateString(), new DateTime(2019, 2, 5).ToLongDateString(), new DateTime(2019, 2, 10).ToLongDateString(), new DateTime(2019, 2, 12).ToLongDateString(), new DateTime(2019, 2, 20).ToLongDateString() },
+            //        yValues: new[] { "90", "48", "50", "83", "27" , "23" }
+            //    )
+            //    .AddLegend();
+
+            // myChart.Write();
+        }
+    </div>
+</body>
+</html>
